@@ -1,6 +1,7 @@
 package com.example.dmaker.service;
 
 import com.example.dmaker.dto.CreateDeveloper;
+import com.example.dmaker.dto.DeveloperDetailDto;
 import com.example.dmaker.dto.DeveloperDto;
 import com.example.dmaker.entity.Developer;
 import com.example.dmaker.exception.DMakerException;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.example.dmaker.exception.DMakerErrorCode.DUPLICATED_MEMBER_ID;
+import static com.example.dmaker.exception.DMakerErrorCode.WRONG_MEMBER_ID;
 import static com.example.dmaker.type.StatusCode.EMPLOYED;
 
 @Slf4j
@@ -58,5 +60,16 @@ public class DMakerService {
         return developerRepository.findDevelopersByStatusCodeEquals(EMPLOYED)
                 .stream().map(DeveloperDto::fromEntity)
                         .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public DeveloperDetailDto getDeveloper(String memberId) {
+        return DeveloperDetailDto.fromEntity(getDeveloperDetail(memberId));
+    }
+
+    private Developer getDeveloperDetail(String memberId) {
+        return developerRepository.findByMemberId(memberId).orElseThrow(
+                () -> new DMakerException(WRONG_MEMBER_ID)
+        );
     }
 }

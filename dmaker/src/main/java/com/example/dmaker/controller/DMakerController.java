@@ -1,6 +1,7 @@
 package com.example.dmaker.controller;
 
 import com.example.dmaker.dto.CreateDeveloper;
+import com.example.dmaker.dto.DeveloperDetailDto;
 import com.example.dmaker.dto.DeveloperDto;
 import com.example.dmaker.service.DMakerService;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,13 @@ public class DMakerController {
     @GetMapping("/developer")
     public List<DeveloperDto> getAllDeveloper() {
         return dMakerService.getAllEmployedDeveloper();
+    }
+
+    @GetMapping("/developer/{memberId}")
+    public DeveloperDetailDto getDeveloperDetail(
+            @PathVariable final String memberId
+    ) {
+        return dMakerService.getDeveloper(memberId);
     }
 
 }
