@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html lang="ko" xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-this is places
+    <p>
+        this is places
+    </p>
+    <ul>
+        <li>placeType: <span th:text="${placeType} ?: _">a</span></li>
+        <li>placeName: <span th:text="${placeName} ?: _">b</span></li>
+        <li>address: <span th:text="${address} ?: _">c</span></li>
+    </ul>
 </body>
 </html>
