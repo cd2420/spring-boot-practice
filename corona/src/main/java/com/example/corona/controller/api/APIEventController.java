@@ -1,8 +1,11 @@
 package com.example.corona.controller.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.corona.constant.ErrorCode;
+import com.example.corona.dto.APIErrorResponse;
+import com.example.corona.exception.GeneralException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -16,4 +19,8 @@ public class APIEventController {
         return List.of("event1", "event2");
     }
 
+    @PostMapping("")
+    public Boolean createEvent() {
+        return true;
+    }
 }
