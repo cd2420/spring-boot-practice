@@ -5,6 +5,7 @@ import com.example.corona.dto.APIErrorResponse;
 import com.example.corona.exception.GeneralException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,5 +23,12 @@ public class APIEventController {
     @PostMapping("")
     public Boolean createEvent() {
         return true;
+    }
+
+    @GetMapping("/{eventId}")
+    public String getEvent(
+            @PathVariable final Integer eventId
+    ) {
+        return "event" + eventId;
     }
 }
