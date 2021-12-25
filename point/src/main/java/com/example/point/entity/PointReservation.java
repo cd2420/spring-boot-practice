@@ -1,10 +1,7 @@
 package com.example.point.entity;
 
 import com.example.point.entity.common.IdEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,6 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Getter
+@ToString
 public class PointReservation extends IdEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -29,6 +27,7 @@ public class PointReservation extends IdEntity {
     @Column(name = "available_days", nullable = false)
     Integer availableDays;
 
+    @Setter
     @Column(name = "is_executed")
     Boolean executed;
 
@@ -43,10 +42,6 @@ public class PointReservation extends IdEntity {
         this.earnedDate = earnedDate;
         this.availableDays = availableDays;
         this.executed = false;
-    }
-
-    public void execute() {
-        this.executed = true;
     }
 
     public LocalDate getExpireDate() {

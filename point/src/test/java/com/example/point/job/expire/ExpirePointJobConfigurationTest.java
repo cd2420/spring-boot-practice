@@ -1,6 +1,6 @@
-package com.example.point.config;
+package com.example.point.job.expire;
 
-import com.example.point.PointApplicationTests;
+import com.example.point.BatchTestSupport;
 import com.example.point.entity.Point;
 import com.example.point.entity.PointWallet;
 import com.example.point.repository.PointRepository;
@@ -13,9 +13,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.jupiter.api.Assertions.*;
 
-class ExpirePointJobConfigurationTest extends PointApplicationTests {
+class ExpirePointJobConfigurationTest extends BatchTestSupport {
 
     @Autowired
     Job expirePointJob;

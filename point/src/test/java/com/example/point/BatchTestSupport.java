@@ -20,7 +20,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles("test")
-public abstract class PointApplicationTests {
+public abstract class BatchTestSupport {
 
 	@Autowired
 	protected JobLauncher jobLauncher;

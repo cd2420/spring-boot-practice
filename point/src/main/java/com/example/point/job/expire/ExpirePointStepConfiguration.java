@@ -1,9 +1,10 @@
-package com.example.point.config;
+package com.example.point.job.expire;
 
 import com.example.point.entity.Point;
 import com.example.point.entity.PointWallet;
 import com.example.point.repository.PointRepository;
 import com.example.point.repository.PointWalletRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -22,6 +23,7 @@ import java.time.LocalDate;
 import java.util.Map;
 
 @Configuration
+@Slf4j
 public class ExpirePointStepConfiguration {
 
     @Bean
