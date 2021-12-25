@@ -23,6 +23,6 @@ public class Message extends IdEntity {
     @Column(name = "title", nullable = false)
     String title;
 
-    @Column(name = "content", nullable = false, columnDefinition = "test")
+    @Column(name = "content", nullable = false)
     String content;
 }

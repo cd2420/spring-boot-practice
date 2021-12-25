@@ -4,5 +4,5 @@ import com.example.point.entity.Point;
 import com.example.point.entity.PointWallet;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PointWalletRepository extends JpaRepository<PointWallet, Integer> {
+public interface PointWalletRepository extends JpaRepository<PointWallet, Long> {
 }

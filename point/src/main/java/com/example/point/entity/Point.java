@@ -2,10 +2,7 @@ package com.example.point.entity;
 
 
 import com.example.point.entity.common.IdEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -21,7 +18,7 @@ public class Point extends IdEntity {
     @JoinColumn(name = "point_wallet_id", nullable = false)
     PointWallet pointWallet;
 
-    @Column(name = "amount", nullable = false, columnDefinition = "BIGINT")
+    @Column(name = "amount", nullable = false)
     Long amount;
 
     @Column(name = "earned_date", nullable = false)
@@ -33,6 +30,7 @@ public class Point extends IdEntity {
     @Column(name = "is_used", nullable = false)
     Boolean used;
 
+    @Setter
     @Column(name = "is_expired", nullable = false)
     Boolean expired;
 
@@ -50,10 +48,11 @@ public class Point extends IdEntity {
         this.expired = false;
     }
 
-    public void expire() {
+    public boolean expire() {
         if (!this.used) {
             this.expired = true;
         }
+        return this.expired;
     }
 
 

@@ -1,10 +1,7 @@
 package com.example.point.entity;
 
 import com.example.point.entity.common.IdEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +18,7 @@ public class PointWallet extends IdEntity {
     @Column(name = "user_id", unique = true, nullable = false)
     String userId;
 
-    @Column(name = "amount", columnDefinition = "BIGINT")
+    @Setter
+    @Column(name = "amount")
     Long amount;
 }

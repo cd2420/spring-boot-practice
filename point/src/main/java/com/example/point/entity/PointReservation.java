@@ -20,7 +20,7 @@ public class PointReservation extends IdEntity {
     @JoinColumn(name = "point_wallet_id", nullable = false)
     PointWallet pointWallet;
 
-    @Column(name = "amount", nullable = false, columnDefinition = "BIGINT")
+    @Column(name = "amount", nullable = false)
     Long amount;
 
     @Column(name = "earned_date", nullable = false)
