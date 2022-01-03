@@ -1,6 +1,6 @@
 package com.example.point.job.reservation;
 
-import com.example.point.entity.Point;
+import com.example.point.repository.Point;
 import com.example.point.entity.PointReservation;
 import com.example.point.entity.PointWallet;
 import com.example.point.repository.PointRepository;

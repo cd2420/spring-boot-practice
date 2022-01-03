@@ -1,6 +1,7 @@
-package com.example.point.entity;
+package com.example.point.repository;
 
 
+import com.example.point.entity.PointWallet;
 import com.example.point.entity.common.IdEntity;
 import lombok.*;
 

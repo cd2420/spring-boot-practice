@@ -1,7 +1,7 @@
 package com.example.point.job.expire;
 
 import com.example.point.BatchTestSupport;
-import com.example.point.entity.Point;
+import com.example.point.repository.Point;
 import com.example.point.entity.PointWallet;
 import com.example.point.repository.PointRepository;
 import com.example.point.repository.PointWalletRepository;
