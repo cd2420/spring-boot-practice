@@ -1,0 +1,18 @@
+
+spring:
+  batch:
+    job:
+      names: ${job.name:NONE}
+    jdbc:
+      initialize-schema: always
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/point?useUnicode=true&characterEncoding=utf8
+    driver-class-name: org.postgresql.Driver
+    username: imdaegeun
+    password: 1234
