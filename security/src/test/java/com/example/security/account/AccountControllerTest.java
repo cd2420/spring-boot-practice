@@ -31,7 +31,7 @@ class AccountControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "lim", roles = "USER")
+    @WithUser
     public void index_user() throws Exception {
         mockMvc.perform(get("/")) // lim이라는 유저가 로그인 되어 있는 상태라면~~
                 .andDo(print())
@@ -39,7 +39,7 @@ class AccountControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "admin", roles = "USER")
+    @WithUser
     public void admin_user() throws Exception {
         mockMvc.perform(get("/admin")) // lim이라는 유저가 로그인 되어 있는 상태라면~~
                 .andDo(print())
