@@ -51,4 +51,8 @@ public class Account {
         this.role = role;
     }
 
+    public void encodePassword() {
+        this.password = "{noop}" + this.password;
+    }
+
 }
