@@ -24,11 +24,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .httpBasic();
     }
 
-    @Autowired
-    AccountService accountService;
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(accountService);
-    }
 }
