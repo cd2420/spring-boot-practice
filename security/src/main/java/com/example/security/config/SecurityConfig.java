@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
 
-        // security 기본 static security filter 요청 무시, ex)favico때 실행되는 Filter 무시. => 스프링 시큐어리티 무시
+        // ignoring() : security filter 요청 무시, ex)favico때 실행되는 Filter 무시. => 스프링 시큐어리티 무시
         web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
 }
